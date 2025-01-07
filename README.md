@@ -21,6 +21,24 @@ HybridCache, **L1 (Yerel Bellek)** ve **L2 (Dağıtılmış Önbellek)** olmak �
 
 ---
 
+## Avantajlar
+
+### 1. **Performans Optimizasyonu**:
+   - Sık erişilen veriler, **L1** önbelleğinden hızlıca sunulur.
+   - Dağıtılmış örnekler arasında veri tutarlılığı, **L2** önbelleği ile sağlanır.
+
+### 2. **Otomatik Senkronizasyon**:
+   - HybridCache, **L1** ve **L2** önbellekleri arasındaki senkronizasyonu otomatik olarak yönetir ve geliştirici yükünü azaltır.
+
+### 3. **Merkezi Son Kullanma Yönetimi**:
+   - **L1** ve **L2** seviyelerinde önbellek sürelerini tek bir yapılandırma ile kontrol edebilirsiniz.
+
+### 4. **Nazik Bozulma (Graceful Degradation)**:
+   - **L1** önbelleği süresi dolarsa, **L2** önbelleği verilerin hala mevcut olmasını sağlar ve veritabanına sorgu gönderilmesini engeller.
+
+Bu avantajlar, .NET 9 **HybridCache**'i, **dağıtık API uygulamalarında** ürün listeleri gibi ağır ve serileştirilmiş verilerin önbelleklenmesi için ideal hale getirir.
+
+----
 
 ## Özellikler
 
@@ -48,11 +66,7 @@ HybridCache, **L1 (Yerel Bellek)** ve **L2 (Dağıtılmış Önbellek)** olmak �
 
 `FetchProductsFromDatabaseAsync` metodu, veritabanından ürün verilerini alır. Gerçek uygulamalarda veritabanı bağlantısı kurularak veri çekme işlemi yapılır.
 
-## Gereksinimler
 
-- **.NET 5 veya üstü**: Proje, .NET 5 veya daha yüksek sürümde çalışacak şekilde yapılandırılmıştır.
-- **Redis**: Redis önbelleği kullanılarak dağıtılmış önbellek sağlanmaktadır.
-- **Microsoft.Extensions.Caching**: Cache işlemleri için gerekli olan kütüphaneler.
 
  
  
